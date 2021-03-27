@@ -1,0 +1,9 @@
+form button {
+  height: 4rem;
+  background-color: rgb(79, 79, 255);
+  border: none;
+  outline: rgb(112, 112, 255);
+  border-radius: 1rem;
+  color: white;
+  font-weight: 600;
+}

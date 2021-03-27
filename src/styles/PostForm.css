@@ -1,0 +1,11 @@
+.PostForm {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.PostForm-Title {
+  width: 100%;
+}

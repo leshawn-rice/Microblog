@@ -1,0 +1,22 @@
+.MessageArea {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20rem;
+  margin: 1rem 0;
+}
+
+.MessageArea-Body {
+  border-radius: 0.5rem;
+  height: 20rem;
+  width: 17rem;
+  border: 0.1px solid black;
+  outline: none;
+}
+
+
+.MessageArea-Label {
+  font-size: 1.5rem;
+  font-weight: 500rem;
+  margin-right: 2rem;
+}

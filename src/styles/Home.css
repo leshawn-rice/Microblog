@@ -1,0 +1,16 @@
+.Home-Container {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Home-Message h1 {
+  font-weight: 100;
+}
+
+.Home-Posts {
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}

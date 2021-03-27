@@ -1,0 +1,31 @@
+.Comments {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  border-radius: 2rem;
+  background-color: rgb(235, 235, 235);
+}
+
+.Comment {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.Comment-Delete {
+  background: none;
+  border: none;
+  outline: none;
+  color: red;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.Comment-Delete:hover {
+  font-weight: 600;
+}
+
+.Comment-Text {
+  font-size: 2rem;
+}

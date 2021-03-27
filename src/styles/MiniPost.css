@@ -1,0 +1,40 @@
+.MiniPost {
+  display: flex;
+  position: relative;
+  justify-self: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 0.5px solid black;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  flex-direction: column;
+  text-align: start;
+  margin: 1rem;
+}
+
+.MiniPost-Title {
+  margin-left: 0.2rem;
+  margin-bottom: 0;
+  text-decoration: none;
+  color: rgb(79, 79, 255);
+  font-size: 2rem;
+}
+
+.MiniPost-Description {
+  margin-left: 0.2rem;
+  margin-top: 0;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.MiniPost-Body {
+  margin-left: 0.2rem;
+  font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .MiniPost {
+    margin: 1rem 0;
+    padding: 0;
+  }
+}
