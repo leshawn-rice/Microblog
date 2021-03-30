@@ -1,8 +1,7 @@
 import React from 'react';
-import { v4 as uuid } from 'uuid';
 import Form from './Form';
 import { useDispatch } from 'react-redux';
-import { addPost } from '../../redux/actionCreators';
+import { addPostApi } from '../../redux/actionCreators';
 import { useHistory } from 'react-router';
 import '../../styles/PostForm.css';
 
@@ -17,11 +16,7 @@ const NewPostForm = () => {
   }
 
   const createPost = (formData) => {
-    const postId = uuid();
-    formData.id = postId;
-    formData.comments = [];
-    formData.score = 0;
-    dispatch(addPost(formData));
+    dispatch(addPostApi(formData));
     history.push('/');
   }
 

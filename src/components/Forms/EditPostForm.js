@@ -1,30 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Form from './Form';
 import { useDispatch, useSelector } from 'react-redux';
-import { editPost } from '../../redux/actionCreators';
-import { Redirect, useHistory, useParams } from 'react-router';
+import { getPostByIdApi, updatePostApi } from '../../redux/actionCreators';
+import { useHistory, useParams } from 'react-router';
 import '../../styles/PostForm.css';
 
 const NewPostForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  const posts = useSelector(state => state.posts);
-  const post = posts.find(p => p.id === id);
+  const post = useSelector(state => state.currentPost);
+  const isLoading = useSelector(state => state.isLoading);
+  const isErrorThrown = useSelector(state => state.isErrorThrown);
+  const errors = useSelector(state => state.errors);
 
-  if (!post) {
-    return <Redirect to="/" />
+  let INITIAL_DATA = {
+    title: '',
+    description: '',
+    body: ''
   }
 
-  const INITIAL_DATA = {
-    title: post.title,
-    description: post.description,
-    body: post.body
+  useEffect(() => {
+    dispatch(getPostByIdApi(id))
+  }, [dispatch, id])
+
+  if (post) {
+    INITIAL_DATA = {
+      title: post.title,
+      description: post.description,
+      body: post.body
+    }
   }
+
 
   const changePost = (formData) => {
     formData.id = id;
-    dispatch(editPost(formData));
+    dispatch(updatePostApi(id, formData));
     history.push('/');
   }
 
@@ -38,6 +49,22 @@ const NewPostForm = () => {
   ]
 
   const buttonLabel = 'Edit Post'
+
+  if (isLoading) {
+    return (
+      <h1>Loading...</h1>
+    )
+  }
+
+  else if (isErrorThrown) {
+    console.log('Error thrown')
+    console.log(errors);
+    return (
+      <>
+        {errors.map(err => <h1 key={err}>{err}</h1>)}
+      </>
+    )
+  }
 
   return (
     <div className="PostForm">

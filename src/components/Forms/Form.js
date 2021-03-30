@@ -22,7 +22,7 @@ const Form = ({ INITIAL_DATA, inputs, buttonLabel, messages = [], submit }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="Form" onSubmit={handleSubmit}>
       {
         inputs.map(input => (
           <Input

@@ -9,6 +9,10 @@
   font-weight: 100;
 }
 
+.Home-Message strong {
+  color: rgb(79, 79, 255);
+}
+
 .Home-Posts {
   justify-content: center;
   flex-direction: row;

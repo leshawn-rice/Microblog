@@ -32,3 +32,19 @@
   font-size: 2rem;
   margin-left: 1rem;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .Navbar-Links  {
+    margin-right: 0.5rem;
+  }
+  .Navbar-Links a {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .Navbar-Links a {
+    font-size: 1rem;
+  }
+}

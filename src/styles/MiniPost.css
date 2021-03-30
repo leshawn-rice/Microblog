@@ -20,6 +20,10 @@
   font-size: 2rem;
 }
 
+.MiniPost-Title:hover {
+  color: rgb(133, 133, 250);
+}
+
 .MiniPost-Description {
   margin-left: 0.2rem;
   margin-top: 0;

@@ -9,3 +9,8 @@
 .PostForm-Title {
   width: 100%;
 }
+
+.PostForm-Title h1 {
+  font-size: 5rem;
+  font-weight: 300;
+}

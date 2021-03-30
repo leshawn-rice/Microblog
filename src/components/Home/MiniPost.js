@@ -1,12 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../../styles/MiniPost.css';
 import Vote from '../Post/Vote';
+import '../../styles/MiniPost.css';
 
-const MiniPost = ({ post, id, title, description, score }) => {
+const MiniPost = ({ post, demo = false }) => {
+
+  if (demo) {
+    return (
+      <div className="MiniPost" style={{ border: 'none', alignItems: 'center', width: '100%' }}>
+        <NavLink className="MiniPost-Title" exact to={`/new`}>
+          Start Sharing
+        </NavLink>
+      </div>
+    )
+  }
+
   return (
     <div className="MiniPost">
-      <Vote post={post} />
+      <Vote post={post} mini={true} />
       <NavLink className="MiniPost-Title" exact to={`/posts/${post.id}`}>
         {post.title}
       </NavLink>
